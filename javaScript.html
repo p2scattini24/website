@@ -1,0 +1,92 @@
+<html>
+<head>
+<script language="javaScript">
+
+function greeting()
+{
+    alert("Hello there.")//"hello there" is a parameter
+}//end of greeting()
+
+
+function greeting1()
+{
+   // a single = is the assignment operator
+   //assignment stores what's on the right side into the element on the left.
+   var name = prompt("Enter your legal title please.")//"type your name" is a parameter
+   alert("Salutations, "+name);
+
+}//end of greeting()
+
+function greeting2()
+{
+
+var answer = confirm("Would you like to participate once more?");
+alert(answer);
+
+
+
+
+}//end of greeting2
+
+function guessing()
+{
+   /* block comment
+      write an algorithm to creat a guessing game. let the user know if the guess it too hight or too low. if they guess the number, alert this fact and tell them how many guesses it took them to guess the number.
+      use a prompt to get a person to enter a number and if their guess is true to the chosen number then return congradulations and number of tries it took, if their guess is too high return a too high, if their guess is too low, return a too low until their guess returns a true.
+   
+   */
+   var usersGuess = -1;
+   var numOfGuesses = 0; //camel case
+   var rand = Math.random()*10;
+   rand = rand + 1;
+   rand = parseInt(rand);
+   
+   
+   usersGuess= prompt("Enter a guessable amount between 1 & 10 please");
+   numOfGuesses= numOfGuesses+1
+
+   
+   while (usersGuess != rand)
+   {
+ 
+
+       if (usersGuess < rand)
+  {
+alert("Your guessable amount is not enough")
+  }
+  else  if (usersGuess > rand)
+  {
+alert("Your guessable amount is too much ")
+  }
+ 
+  usersGuess= prompt("Type a new number please.")
+  numOfGuesses= numOfGuesses+1
+ 
+} // userGuess is correct.
+
+alert("Huzzah! You have managed to match the brainwaves of this page. Bravo.")
+}
+
+
+</script>
+</head>
+<body bgcolor="#666666">
+<font face="Courier New" color="white">
+
+<h1> Never Before Seen JavaScript Page</h1>
+<h1><a href="index.html"> Click here to go back</a></h1><br/><br.>
+
+<input type="button" value=" Game Area" onclick="guessing()"/><br/>
+
+<br/><br/><br/><br/><br/>
+<hr/>
+<input type="button" value="A Clickable Area" onclick="greeting()"/><br/>
+
+<hr/>
+<input type="button" value="Yet Another Clickable Area" onclick="greeting1()"/><br/>
+
+<hr/>
+<input type="button" value="Again Another Clickable Area" onclick="greeting2()"/><br/>
+</font>
+</body>
+</html>
