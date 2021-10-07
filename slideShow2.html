@@ -1,0 +1,167 @@
+<html>
+<head>
+
+<script language="JavaScript">
+
+var clipList = [ "sounds/Namjoonaudio.mp3",
+                 "sounds/Jinaudio.mp3",
+				 "sounds/Yoongiaudio.mp3",
+				 "sounds/JungHaudio.mp3",
+				 "sounds/Jiminaudio.mp3",
+				 "sounds/Vaudio.mp3",
+				 "sounds/JKaudio.mp3" ]
+				 
+
+
+
+var number = 0;
+
+var autoStart = false;
+
+                                      
+
+
+
+
+var picList= [ "images/KimNamjoonslide1.jpg", 
+               "images/KimSeokJinslide2.png",
+               "images/MinYoongislide3.jpg",
+			   "images/JungHoseokslide4.jpg",
+			   "images/ParkJiminslide5.jpg",
+			   "images/KimTaehyungslide6.jpg",
+			   "images/JungJungkookslide7.png" ]
+			   
+function autoRun()
+{
+	if (autoStart == true)// runs the slideshow automatically 
+	{
+	    autoStart = false
+	
+	
+	
+	
+	
+	
+	next();
+	
+	timer = setTimeout("autoRun", 5000);
+}
+
+
+function clicky()
+{
+  if (number = picList.length - 1)
+    {
+	    number = 0;
+	}
+	else 
+	{
+	number = number + 1;
+	}
+}
+
+
+
+
+function next()
+{
+	
+	document.getElementById("display").src = picList[number];
+	
+	document.getElementById("player").src = clipList[number];
+	
+	//turn the turn table on
+    document.getElementById("player").play();
+     //reset so it plays back
+    clicky();
+}
+
+function run() 
+{
+   if(autoStart == false)//player isn't running
+   {
+      autoStart = true;
+	  document.getElementById("runButton").value = "Pause"
+   }   
+   else//play is running
+   {
+      autoStart = false;
+	  document.getElementById("runButton").value = "Slide through them all"
+   }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	next();
+	
+	var clipLength = clipList[number].length;// length of clip in seconds
+	//alert(clipLength)
+	timer = setTimeout("run()", clipLength*1000);
+}
+
+
+
+
+
+
+</script>
+</head>
+<body bgcolor="336666">
+<font color="FFFFCC" face="Courier New">
+<center>
+<h1> My Presentation</h1>
+
+<a href="index.html">Click here to go back.</a>
+
+
+<br/><br/>
+<input type="Button" value="Next Photograph" onclick="next()"/>
+<input type="Button" value="Slide through them all" onclick="run()" id="runButton"/>
+<br/><br/>
+<img src="images/KimNamjoonslide1.jpg" id="display"/>
+<audio id="player"></audio>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</font>
+</center>
+</body>
+</html>
