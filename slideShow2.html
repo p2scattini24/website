@@ -31,33 +31,19 @@ var picList= [ "images/KimNamjoonslide1.jpg",
 			   "images/KimTaehyungslide6.jpg",
 			   "images/JungJungkookslide7.png" ]
 			   
-function autoRun()
-{
-	if (autoStart == true)// runs the slideshow automatically 
-	{
-	    autoStart = false
-	
-	
-	
-	
-	
-	
-	next();
-	
-	timer = setTimeout("autoRun", 5000);
-}
 
 
 function clicky()
 {
-  if (number = picList.length - 1)
+	if (number == picList.length - 1)
     {
 	    number = 0;
 	}
 	else 
 	{
-	number = number + 1;
+		number = number + 1;
 	}
+	
 }
 
 
@@ -91,23 +77,20 @@ function run()
 	
 	
 	
+	autoRun();
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	next();
-	
-	var clipLength = clipList[number].length;// length of clip in seconds
-	//alert(clipLength)
-	timer = setTimeout("run()", clipLength*1000);
 }
 
+function autoRun()
+{
+	if (autoStart == true)// runs the slideshow automatically 
+	{
+		next();
+		//alert(autoStart);
+		timer = setTimeout("autoRun()", 5000);
+	}
+}
 
 
 
