@@ -1,0 +1,173 @@
+<html>
+<head>
+	<script language="javaScript">
+	
+	var alpha = [ "a", 
+	              "b",  
+	              "c",
+                  "d",
+                  "e",
+                  "f",
+                  "g",
+                  "h",
+                  "i",				  
+	              "j",
+				  "k",
+				  "l",
+				  "m",
+				  "n",
+				  "o",
+				  "p",
+				  "q",
+				  "r",
+				  "s",
+				  "t",
+				  "u",
+				  "v",
+				  "w",
+				  "x",
+				  "y",
+				  "z",
+				  " "
+				];
+				
+	var scrambled = [ "q", 
+	                  "a",  
+	                  "z",
+                      "x",
+                      "s",
+                      "w",
+                      "e",
+                      "d",
+                      "c",				  
+	                  "v",
+				      "f",
+				      "r",
+					  " ",
+				      "t",
+				      "b",
+				      "h",
+				      "n",
+				      "g",
+				      "y",
+				      "u",
+				      "m",
+				      "j",
+				      "k",
+				      "p",
+				      "l",
+				      "i",
+				      "o"
+				          ];
+								 
+	var numberList;
+				
+	/*function secretMessage()
+	{
+		//What should the "Encrypt" button do if...
+		//     ... the unencrypt text boxes has data, and the encrypt text box is empty?
+		//     ... the encrypt text boxes has data, and the unencrypt text box is empty?
+	
+		//What conclusion can we make if...
+		//     ... both text boxes are empty?
+		//     ... both text boxes have data in them?
+		
+		
+		//test if both textboxes are empty (if statement)
+		
+		//Nested if statement
+	if (document.getElementById("unencrypt").value == "") // English box is empty
+	{
+
+	if (document.getElementById("encrypt").value == "") // Scrambled box is empty
+	{
+
+		alert("Both boxes are empty");
+
+	}
+	else
+	{
+	
+		alert("I will decrypt this message");
+	
+	}
+	}
+	else  // There's data in the first box
+	{
+	
+	if (document.getElementById("encrypt").value == "") // Scrambled box is empty
+	
+	{
+	
+	encrypt();
+	
+	}
+	else
+	{
+		alert("Both boxes have data. Please clear boxes");
+	}
+	}
+	*/	
+	
+	function encrypt()
+	{
+	    var firstBox = document/getElementById("unencrypt").value;
+		numberList = new Array( firstBox.length)
+		
+		var counter = 0;
+		while ( counter < firstBox.length )
+		{
+		
+		
+		
+		  var letter = firstBox.substr(counter,1);
+		  var letIndex = alpha.IndexOf(letter);
+		  numberList[ counter ] = letIndex;
+		    counter++;
+		}
+		alert(letIndex);	
+		
+		var answer = " "
+		
+		while ( counter < firstBox.length )
+		{
+		      
+			var letIndex = numberList[ counter ];
+			answer = answer + scrambled[letIndex];
+			//code encrypt  
+			  
+		   counter++
+		}
+		alert("Encrypting")
+	}
+	
+	
+	function clearBoxes()
+	{
+		document.getElementById("unencrypt").value ="";
+		document.getElementById("encrypt").value ="";
+		alert("Clearing ")
+	}
+	//idk what I am typing but I will fix this code! I am determined sort of. 
+	
+	
+	</script>
+</head>
+<body>
+	<center>
+		<h1>My Encryption App</h1>
+		<br/><br/>
+		<input type ="button" value="Encrypt" onClick="secretMessage()"/>
+		<input type ="button" value="Clear" onClick="clearBoxes()"/>
+		<br/><br/>
+		
+		Unencrypted Message
+		<input type = "text" size="40" id="unencrypt"/> 
+		
+		<br/><br/>
+		Encrypted Message
+		<input type = "text" size="40" id="encrypt"/> 
+		<h1><a href="index.html"> Click here to go back</a></h1><br/><br.>
+	</center>
+</body>
+</html>
